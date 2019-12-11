@@ -30,15 +30,17 @@ body {
     right: 0;
     left: 0;
     bottom: 0;
-    background: url(assets/pattern-red.png) repeat;
     background-size: 1350px;
     z-index: -1;
     transform: translateX(35px) translateY(35px);
 }
 
 h1 {
-	margin: 0;
-	font-size: 4.5rem;
+    margin: 0;
+    padding: 30px;
+    font-size: 4.5rem;
+    color: white;
+    background-color: teal;
 }
 
 h2 {
@@ -54,7 +56,7 @@ h2 {
 form {
 	display: grid;
     grid-template-columns: repeat(5, minmax(60px, 1fr));
-    border: 1px solid #e44d48;
+    border: 1px solid teal;
 }
 
 label {
@@ -68,17 +70,17 @@ input {
 }
 
 input[type=text] {
-    color: #e44d48;
+    color: teal;
     border: 1px solid transparent;
     font-weight: bold;
 }
 
 input[type=submit] {
-    background-color: #e44d48;
+    background-color: teal;
     box-shadow: none;
     color: white;
     text-align: center;
-    border: 1px solid #e44d48;
+    border: 1px solid teal;
     text-transform: uppercase;
     grid-column: -2 / -1;
 }
@@ -86,7 +88,7 @@ input[type=submit] {
 #nameInput, #nameInput::placeholder {
 	grid-column: 1 / 2;
 	text-transform: uppercase;
-	color: #e44d48;
+	color: teal;
 }
 
 #messageInput {
@@ -136,7 +138,7 @@ ul li {
 
 strong {
 	text-transform: uppercase;
-	color: #e44d48;
+	color: teal;
 	grid-column: 1 / 2;
 	align-self: center;
 }
