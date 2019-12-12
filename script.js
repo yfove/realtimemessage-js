@@ -16,8 +16,10 @@ chatApp.config = () => {
     // console.log(firebase); //too see all the methods in firebase
     //getting reference to firebase database
     chatApp.database = firebase.database(); //database is a method
+    //must load database script underneath initial firebase script
     //getting reference to chat object in database
     chatApp.chat = chatApp.database.ref(`/chat`);
+    //create a database on firebase website
 };
 
 chatApp.init = () => {
