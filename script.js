@@ -61,6 +61,23 @@ chatApp.init = () => {
         //always scroll to the bottom;
         chatApp.messageList[0].scrollTop = chatApp.messageList[0].scrollHeight;
     });
+
+    // Remove Message
+    chatApp.messageList.on('click', '.delete', function () {
+        const id = $(this).attr('id');
+        console.log(id);
+        chatApp.database.ref(`/chat/${id}`).remove();
+    });
+
+    //listening to the delete of data on firebase
+    chatApp.chat.limitToLast(10).on('child_removed', function (message) {
+        //get the id of the message being deleted
+        const id = message.key;
+        //find the message with that id and delete the li closest to it
+        //if you don't use closest li then it will only remove the button
+        chatApp.messageList.find(`#${id}`).closest('li').remove();
+    });
+
 };
 
 $(function () {
